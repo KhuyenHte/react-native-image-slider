@@ -1,14 +1,15 @@
 // @flow
 
-import React, { type Node, Component } from 'react';
+import React, { Component } from 'react';
+
 import {
-  Image,
-  View,
-  ScrollView,
-  StyleSheet,
-  TouchableHighlight,
-  TouchableOpacity,
-  Dimensions,
+	Dimensions,
+	Image,
+	ScrollView,
+	StyleSheet,
+	TouchableHighlight,
+	TouchableOpacity,
+	View,
 } from 'react-native';
 
 const reactNativePackage = require('react-native/package.json');
@@ -79,7 +80,8 @@ class ImageSlider extends Component<PropsType, StateType> {
     const x = (this.props.imagesWidth ?
 	this.props.imagesWidth : Dimensions.get("window").width)
 	* index;
-
+	
+	console.log("x=, this.props.imagesWidth=", x, this.props.imagesWidth);
     this._ref && this._ref.scrollTo({ y: 0, x, animated });
 
     this.setState({ position: index });
